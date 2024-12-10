@@ -7,6 +7,10 @@ public class Scalar {
         this.value = value;
     }
 
+    public Scalar() {
+        this.value = 1;
+    }
+
     public Scalar multiply(Scalar other) {
         return new Scalar(this.value * other.value);
     }

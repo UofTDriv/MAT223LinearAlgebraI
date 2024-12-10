@@ -56,4 +56,12 @@ public class Vector {
         }
         return false;
     }
+
+    public int size() {
+        return dimension;
+    }
+
+    public double get(int j) {
+        return data[j];
+    }
 }

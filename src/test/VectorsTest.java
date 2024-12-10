@@ -68,4 +68,13 @@ public class VectorsTest {
         AugmentedMatrix rref = (AugmentedMatrix) matrix.toReducedRowEchelonForm();
         assertTrue(e1.isSolution(rref.getConstants().data), "The solution is incorrect");
     }
+
+    @Test
+    public void testNumberOfPivots() {
+        IdentityMatrix identity = new IdentityMatrix(3);
+        assertTrue(identity.countPivotColumns() == 3, "The number of pivots is incorrect");
+        Matrix actual = new Matrix(new double[][]{{1, 0, 0, 1}, {0, 1, 2, 0}, {0, 0, 0, 0}});
+        int actualPivots = actual.countPivotColumns();
+        assertTrue(actualPivots == 2, "The number of pivots is incorrect");
+    }
 }

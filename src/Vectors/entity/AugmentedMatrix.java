@@ -12,6 +12,26 @@ public class AugmentedMatrix extends Matrix {
             entries[i][system.equations[i].coefficients.length] = system.equations[i].constant;
         }
     }
+    
+    public AugmentedMatrix(Vector[] vectors, Vector constants) {
+        super();
+        if (vectors.length == 0 || constants.size() != vectors[0].size()) {
+            throw new IllegalArgumentException("Dimensions mismatch");
+        }
+        this.entries = new double[vectors[0].size()][vectors.length + 1];
+        this.rows = vectors[0].size();
+        this.columns = vectors.length + 1;
+
+        for (int i = 0; i < vectors.length; i++) {
+            for (int j = 0; j < rows; j++) {
+                entries[j][i] = vectors[i].get(j);
+            }
+        }
+
+        for (int j = 0; j < rows; j++) {
+            entries[j][columns - 1] = constants.get(j);
+        }
+    }
 
     public Vector getConstants() {
         double[] constants = new double[rows];

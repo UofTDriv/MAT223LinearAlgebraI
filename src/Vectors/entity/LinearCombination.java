@@ -16,5 +16,11 @@ public class LinearCombination extends Vector {
         this.dimension = temp.dimension;
     }
 
+    public LinearCombination(Vector[] vectors) {
+        this(vectors, new Scalar[vectors.length]);
+    }
 
+
+    public LinearCombination() {
+    }
 }

@@ -31,7 +31,7 @@ public class Matrix {
         entries[j] = temp;
         return this;
     }
-
+    
     public Matrix replaceRowWithScalarMultiple(int i, double scalar) {
         if (scalar != 0) {
             for (int j = 0; j < columns; j++) {
@@ -79,6 +79,8 @@ public class Matrix {
         }
         return this;
     }
+    
+    
 
     public Matrix toRowEchelonForm() {
         int lead = 0;
@@ -115,6 +117,34 @@ public class Matrix {
         return this;
     }
 
+    public int countPivotColumns() {
+        int pivotCount = 0;
+        for (int j = 0; j < columns; j++) {
+            boolean isPivot = false;
+            boolean onlyOneNonZero = true;
+            for (int i = 0; i < rows; i++) {
+                if (entries[i][j] != 0) {
+                    if (!isPivot && entries[i][j] == 1) {
+                        isPivot = true;
+                        for (int k = 0; k < j; k++) {
+                            if (entries[i][k] != 0) {
+                                onlyOneNonZero = false;
+                                break;
+                            }
+                        }
+                    } else {
+                        onlyOneNonZero = false;
+                        break;
+                    }
+                }
+            }
+            if (isPivot && onlyOneNonZero) {
+                pivotCount++;
+            }
+        }
+        return pivotCount;
+    }
+    
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof Matrix) {
