@@ -8,6 +8,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class VectorsTest {
     @Test
+    public void testVectorAddition() {
+        Vector v1 = new Vector(new double[]{1, 2, 3});
+        Vector v2 = new Vector(new double[]{4, 5, 6});
+        Vector v3 = new Vector(new double[]{5, 7, 9});
+        assertTrue(v3.equals(v1.add(v2)), "The vector addition result is incorrect");
+    }
+
+    @Test
     public void testLinearCombination() {
         Vector[] vectors = new Vector[2];
         Vector e1 = new Vector(new double[]{1, 0, 0});

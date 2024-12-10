@@ -115,8 +115,6 @@ public class Matrix {
         return this;
     }
 
-
-
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof Matrix) {

@@ -9,6 +9,11 @@ public class Vector {
         this.dimension = data.length;
     }
 
+    public Vector(int dimension) {
+        this.data = new double[dimension];
+        this.dimension = dimension;
+    }
+
     public Vector() {
     }
 
@@ -20,7 +25,8 @@ public class Vector {
         for (int i = 0; i < this.dimension; i++) {
             resultData[i] = this.data[i] + other.data[i];
         }
-        return new Vector(resultData);
+        this.data = resultData;
+        return this;
     }
 
     @Override

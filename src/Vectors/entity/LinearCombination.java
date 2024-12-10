@@ -8,14 +8,12 @@ public class LinearCombination extends Vector {
         assert vector.length == coefficients.length;
         this.vectors = vector;
         this.coefficients = coefficients;
-        double[] resultData = new double[vector[0].dimension];
+        Vector temp = new Vector(vector[0].dimension);
         for (int i = 0; i < this.vectors.length; i++) {
-            for (int j = 0; j < this.vectors[i].dimension; j++) {
-                resultData[j] += this.vectors[i].data[j] * this.coefficients[i].value;
-            }
+            temp.add(coefficients[i].multiply(vectors[i]));
         }
-        this.data = resultData;
-        this.dimension = resultData.length;
+        this.data = temp.data;
+        this.dimension = temp.dimension;
     }
 
 
