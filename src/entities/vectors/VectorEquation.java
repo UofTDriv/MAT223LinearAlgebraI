@@ -1,4 +1,6 @@
-package Vectors.entity;
+package entities.vectors;
+
+import entities.matrices.AugmentedMatrix;
 
 public class VectorEquation extends LinearCombination {
 

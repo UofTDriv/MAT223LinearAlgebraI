@@ -1,4 +1,4 @@
-package Vectors.entity;
+package entities.matrices;
 
 public class MatrixOfCoefficients extends Matrix {
     public MatrixOfCoefficients(SystemLinearEquations system) {

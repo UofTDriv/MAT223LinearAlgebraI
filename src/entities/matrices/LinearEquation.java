@@ -1,4 +1,4 @@
-package Vectors.entity;
+package entities.matrices;
 
 public class LinearEquation {
     double[] coefficients;

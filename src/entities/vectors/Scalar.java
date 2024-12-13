@@ -1,4 +1,4 @@
-package Vectors.entity;
+package entities.vectors;
 
 public class Scalar {
     public double value;
@@ -18,7 +18,7 @@ public class Scalar {
     public Vector multiply(Vector vector) {
         double[] resultData = new double[vector.dimension];
         for (int i = 0; i < vector.dimension; i++) {
-            resultData[i] = this.value * vector.data[i];
+            resultData[i] = this.value * vector.components[i];
         }
         return new Vector(resultData);
     }

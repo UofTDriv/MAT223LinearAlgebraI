@@ -1,4 +1,6 @@
-package Vectors.entity;
+package entities.matrices;
+
+import entities.vectors.Vector;
 
 public class AugmentedMatrix extends Matrix {
     public AugmentedMatrix(SystemLinearEquations system) {

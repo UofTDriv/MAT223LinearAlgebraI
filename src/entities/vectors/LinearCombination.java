@@ -1,4 +1,4 @@
-package Vectors.entity;
+package entities.vectors;
 
 public class LinearCombination extends Vector {
     Vector[] vectors;
@@ -12,7 +12,7 @@ public class LinearCombination extends Vector {
         for (int i = 0; i < this.vectors.length; i++) {
             temp.add(coefficients[i].multiply(vectors[i]));
         }
-        this.data = temp.data;
+        this.components = temp.components;
         this.dimension = temp.dimension;
     }
 

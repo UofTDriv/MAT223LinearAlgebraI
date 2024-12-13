@@ -1,6 +1,9 @@
 package test;
 
-import Vectors.entity.*;
+import entities.matrices.*;
+import entities.vectors.LinearCombination;
+import entities.vectors.Scalar;
+import entities.vectors.Vector;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -66,7 +69,7 @@ public class VectorsTest {
         SystemLinearEquations system = new SystemLinearEquations(new LinearEquation[]{e1, e2});
         AugmentedMatrix matrix = new AugmentedMatrix(system);
         AugmentedMatrix rref = (AugmentedMatrix) matrix.toReducedRowEchelonForm();
-        assertTrue(e1.isSolution(rref.getConstants().data), "The solution is incorrect");
+        assertTrue(e1.isSolution(rref.getConstants().components), "The solution is incorrect");
     }
 
     @Test

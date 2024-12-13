@@ -1,4 +1,6 @@
-package Vectors.entity;
+package entities.matrices;
+
+import entities.vectors.Vector;
 
 public class Matrix {
     public double[][] entries;
@@ -17,7 +19,7 @@ public class Matrix {
         this.entries = new double[rows][columns.length];
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns.length; j++) {
-                this.entries[i][j] = columns[i].data[j];
+                this.entries[i][j] = columns[i].components[j];
             }
         }
     }
@@ -79,8 +81,6 @@ public class Matrix {
         }
         return this;
     }
-    
-    
 
     public Matrix toRowEchelonForm() {
         int lead = 0;
@@ -166,7 +166,7 @@ public class Matrix {
                 return false;
             }
             for (int i = 0; i < this.rows; i++) {
-                if (this.entries[i][0] != other.data[i]) {
+                if (this.entries[i][0] != other.components[i]) {
                     return false;
                 }
             }

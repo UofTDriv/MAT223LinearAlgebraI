@@ -1,4 +1,4 @@
-import Vectors.entity.Vector;
+import entities.vectors.Vector;
 
 public class Main {
     public static void main(String[] args) {
